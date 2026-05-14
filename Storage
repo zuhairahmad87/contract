@@ -2,7 +2,6 @@ mapping(address => bool) public hasVoted;
 
 function vote(string memory candidate) public {
     require(!hasVoted[msg.sender], "already voted");
-
     hasVoted[msg.sender] = true;
     votes[candidate]++;
 }
